@@ -69,5 +69,5 @@ docker-compose down
 
 Remove the whole test environment/clean up.
 ```
-docker-machine rm -f draft
+docker-machine rm -f testing
 ```
