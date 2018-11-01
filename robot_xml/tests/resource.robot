@@ -9,8 +9,9 @@ Documentation   Test suite should always import only one resource file.
 ...  project-wide keywords, imports, and other settings reside.
 
 *** Variables ***
-${XML}      /tmp/tests/example_resp.xml
-${file} =    Parse XML    ${XML}
+${filename}    example_resp.xml
+${location}      /tmp/tests/
+${file} =    Parse XML    ${location}${filename}
 
 *** Keywords ***
 Verify Test
@@ -19,39 +20,39 @@ Verify Test
 
 Getfile
     Run    apk add wget
-    ${put} =    Run    wget http://web/example_resp.xml
+    ${put} =    Run    wget http://web/${filename}
     Log    ${put}
 
 Verify File
-    File Should Exist    ${XML}
+    File Should Exist    ${location}${filename}
 
 Findfile
-    ${output} =    Run    find / -name example_resp.xml
+    ${output} =    Run    find / -name ${filename}
     Log    ${output}
 
 Validate XML
-    ${file} =    Parse XML    ${XML}
+    ${file} =    Parse XML    ${location}${filename}
     Should Be Equal    ${file.tag}    example
     ${first} =    Get Element    ${file}    first
     Should Be Equal    ${first.text}    jotain
 
-    @{texts} =    Get Elements Texts    ${XML}    third/child
+    @{texts} =    Get Elements Texts    ${location}${filename}    third/child
     Length Should Be	${texts}	2
     Should Be Equal	@{texts}[0]	more text
     Should Be Equal	@{texts}[1]	${EMPTY}
 
 2Validate XML
-    ${file} =    Parse XML    ${XML}
+    ${file} =    Parse XML    ${location}${filename}
     Should Be Equal    ${file.tag}    example
     ${first} =    Get Element    ${file}    first
     Should Be Equal    ${first.text}    jotain
 
 3Validate XML
-    ${file} =    Parse XML    ${XML}
-    @{texts} =    Get Elements Texts   ${XML}    toinen/homma
+    ${file} =    Parse XML    ${location}${filename}
+    @{texts} =    Get Elements Texts   ${location}${filename}    toinen/homma
     Length Should Be    ${texts}    3
 
 4Validate XML
-    ${file} =    Parse XML    ${XML}
+    ${file} =    Parse XML    ${location}${filename}
     ${_text} =    Get Element    ${file}    fourth/aakkonen
     Should Be Equal    ${_text.text}    tekstiä
