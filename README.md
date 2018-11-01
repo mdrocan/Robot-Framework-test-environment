@@ -6,6 +6,7 @@ It is created fairly easily using [docker-compose] (https://docs.docker.com/comp
 Used test framework: [Robot Framework] (https://github.com/robotframework/robotframework)
 - Dependency test libraries/modules are installed during the setup and execution phase.
 - Currently included testing activities: XML and REST reply verifications.
+- Does not use SeleniumLibrary or browsers.
 
 ## Versions used in development/testing:
 ```
