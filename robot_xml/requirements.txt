@@ -1,0 +1,6 @@
+# Add all your 3rd party dependencies from PIP here
+#
+# Run with: pip install -r requirements.txt
+
+robotframework==3.0.4
+robotframework-lint

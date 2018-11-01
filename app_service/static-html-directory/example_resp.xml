@@ -1,0 +1,20 @@
+<example>
+  <first id="1">jotain</first>
+  <second id="2">
+    <child/>
+  </second>
+  <toinen>
+    <homma>jepaa juuu</homma>
+    <p4/>
+    <homma>joooo</homma>
+    <homma>joooo</homma>
+  </toinen>
+  <third>
+    <child>more text</child>
+    <second id="child"/>
+    <child><grandchild/></child>
+  </third>
+  <fourth>
+    <aakkonen>tekstiä</aakkonen>
+  </fourth>
+</example>

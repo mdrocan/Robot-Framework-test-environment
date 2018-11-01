@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  web:
+    build: app_service
+    expose:
+      - 80
+    networks:
+      - test-network
+
+  xml-validation:
+    build: robot_xml
+    command: --outputdir /out /tests
+    volumes:
+      - ./robot_xml/tests:/tests:rw
+      - ./results/xml:/out:rw
+    depends_on:
+      - web
+    networks:
+      - test-network
+
+  rest-validation:
+    build: robot_rest
+    command: --outputdir /out /tests
+    volumes:
+      - ./robot_rest/tests:/tests:rw
+      - ./results/rest:/out:rw
+    depends_on:
+      - web
+    networks:
+      - test-network
+
+  validate-env:
+    build: test-env
+    depends_on:
+      - web
+    networks:
+      - test-network
+
+networks:
+  test-network:
