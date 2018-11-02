@@ -1,3 +1,3 @@
-FROM  python:alpine3.7
+FROM  python:alpine3.8
 
 CMD ["sh"]
