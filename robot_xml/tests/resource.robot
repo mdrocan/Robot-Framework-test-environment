@@ -22,8 +22,6 @@ Getfile
     Run    apk add wget
     ${put} =    Run    wget http://web/${filename}
     Log    ${put}
-
-Verify File
     File Should Exist    ${location}${filename}
 
 Findfile
@@ -41,18 +39,8 @@ Validate XML
     Should Be Equal	@{texts}[0]	more text
     Should Be Equal	@{texts}[1]	${EMPTY}
 
-2Validate XML
-    ${file} =    Parse XML    ${location}${filename}
-    Should Be Equal    ${file.tag}    example
-    ${first} =    Get Element    ${file}    first
-    Should Be Equal    ${first.text}    jotain
-
-3Validate XML
-    ${file} =    Parse XML    ${location}${filename}
     @{texts} =    Get Elements Texts   ${location}${filename}    toinen/homma
     Length Should Be    ${texts}    3
 
-4Validate XML
-    ${file} =    Parse XML    ${location}${filename}
     ${_text} =    Get Element    ${file}    fourth/aakkonen
     Should Be Equal    ${_text.text}    tekstiä

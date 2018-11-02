@@ -18,6 +18,3 @@ Wget File
 
 Validate Response
     Validate XML
-    2Validate XML
-    3Validate XML
-    4Validate XML
