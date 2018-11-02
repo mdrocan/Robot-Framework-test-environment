@@ -1,9 +1,9 @@
 # Dockerized test environment for XML and REST validation
 
 The test environment is based on Alpine and Nginx images in Docker containers.
-It is created fairly easily using [docker-compose] (https://docs.docker.com/compose/).
+It is created fairly easily using [docker-compose](https://docs.docker.com/compose/).
 
-Used test framework: [Robot Framework] (https://github.com/robotframework/robotframework)
+Used test framework: [Robot Framework](https://github.com/robotframework/robotframework)
 #1 Dependency test libraries/modules are installed during the setup and execution phase.
 #2 Currently included testing activities: XML and REST reply verifications.
 #3 Does not use SeleniumLibrary or browsers.
