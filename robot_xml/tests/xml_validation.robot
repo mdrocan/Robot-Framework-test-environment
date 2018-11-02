@@ -2,11 +2,8 @@
 Resource    resource.robot
 
 **** Variables ***
-#${PROJECTROOT}
 
 *** Keywords ***
-    [Documentation]    Keywords should only be promoted to resource file when
-    ...                they are used in more than one place
 
 *** Test cases ***
 Run Linter

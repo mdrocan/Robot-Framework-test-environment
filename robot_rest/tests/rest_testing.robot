@@ -1,8 +1,12 @@
-*** settings ***
+*** Settings ***
 Resource    resource.robot
 Library     REST  http://echo.jsontest.com
 
-*** test cases ***
+**** Variables ***
+
+*** Keywords ***
+
+*** Test cases ***
 Run Linter
     Verify test
 
