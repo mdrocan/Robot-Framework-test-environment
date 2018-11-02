@@ -4,9 +4,9 @@ The test environment is based on Alpine and Nginx images in Docker containers.
 It is created fairly easily using [docker-compose] (https://docs.docker.com/compose/).
 
 Used test framework: [Robot Framework] (https://github.com/robotframework/robotframework)
-- Dependency test libraries/modules are installed during the setup and execution phase.
-- Currently included testing activities: XML and REST reply verifications.
-- Does not use SeleniumLibrary or browsers.
+#1 Dependency test libraries/modules are installed during the setup and execution phase.
+#2 Currently included testing activities: XML and REST reply verifications.
+#3 Does not use SeleniumLibrary or browsers.
 
 ## Versions used in development/testing:
 ```
@@ -42,12 +42,12 @@ Server:
 
 ## Commands to get the environment working:
 
-A new environment is created using Virtualbox and the environment is named as "testing". 
+A new environment is created using Virtualbox and it is named as: testing 
 ```
 docker-machine create -d virtualbox testing
 ```
 
-Taking the newly created environment into use.
+Take the (newly) created environment into use.
 ```
 eval $(docker-machine env testing)
 ```
@@ -68,7 +68,7 @@ Shut down the whole test environment.
 docker-compose down
 ```
 
-Remove the whole test environment/clean up.
+Remove the whole test environment/cleanup.
 ```
 docker-machine rm -f testing
 ```
