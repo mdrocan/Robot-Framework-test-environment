@@ -11,7 +11,7 @@ ${file} =    Parse XML    ${location}${filename}
 
 *** Keywords ***
 Verify Test
-    ${linter} =    Run    rflint /tmp/tests/
+    ${linter} =    Run    rflint ${location}
     Log    ${linter}
 
 Getfile
@@ -31,9 +31,9 @@ Validate XML
     Should Be Equal    ${first.text}    jotain
 
     @{texts} =    Get Elements Texts    ${location}${filename}    third/child
-    Length Should Be	${texts}	2
-    Should Be Equal	@{texts}[0]	more text
-    Should Be Equal	@{texts}[1]	${EMPTY}
+    Length Should Be    ${texts}    2
+    Should Be Equal    @{texts}[0]    more text
+    Should Be Equal    @{texts}[1]    ${EMPTY}
 
     @{texts} =    Get Elements Texts   ${location}${filename}    toinen/homma
     Length Should Be    ${texts}    3
