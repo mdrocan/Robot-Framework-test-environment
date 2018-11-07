@@ -38,5 +38,5 @@ Validate XML
     @{texts} =    Get Elements Texts   ${location}${filename}    toinen/homma
     Length Should Be    ${texts}    3
 
-    ${_text} =    Get Element    ${file}    fourth/aakkonen
-    Should Be Equal    ${_text.text}    tekstiä
+    ${_text} =    Get Elements    ${file}    fourth/aakkonen
+    Length Should Be    ${_text}    2
