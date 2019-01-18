@@ -11,31 +11,31 @@ Used test framework: [Robot Framework](https://github.com/robotframework/robotfr
 ## Versions used in development/testing:
 ```
 $ docker-machine version
-docker-machine version 0.16.0, build 702c267f
+docker-machine version 0.16.1, build cce350d
 
 $ docker-compose version
 docker-compose version 1.23.2, build unknown
 docker-py version: 3.6.0
-CPython version: 3.7.1
+CPython version: 3.7.2
 OpenSSL version: OpenSSL 1.0.2q  20 Nov 2018
 
 $ docker version
-Client:
- Version:           18.09.0-ce
+Client: Docker Engine - Community
+ Version:           18.09.1
  API version:       1.39
- Go version:        go1.11.2
- Git commit:        4d60db4
- Built:             unknown-buildtime
+ Go version:        go1.11.4
+ Git commit:        4c52b90
+ Built:             Thu Jan 10 03:21:29 2019
  OS/Arch:           darwin/amd64
  Experimental:      false
 
 Server: Docker Engine - Community
  Engine:
-  Version:          18.09.0
+  Version:          18.09.1
   API version:      1.39 (minimum version 1.12)
-  Go version:       go1.10.4
-  Git commit:       4d60db4
-  Built:            Wed Nov  7 00:55:00 2018
+  Go version:       go1.10.6
+  Git commit:       4c52b90
+  Built:            Wed Jan  9 19:41:49 2019
   OS/Arch:          linux/amd64
   Experimental:     true
 ```
