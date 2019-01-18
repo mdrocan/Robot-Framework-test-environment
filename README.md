@@ -42,17 +42,17 @@ Server: Docker Engine - Community
 
 ## Commands to get the environment working:
 
-A new environment is created using Virtualbox and it is named as: testing 
+Create a new environment using Virtualbox and name it 'testing':
 ```
 docker-machine create -d virtualbox testing
 ```
 
-Take the (newly) created environment into use.
+Take the created environment into use:
 ```
 eval $(docker-machine env testing)
 ```
 
-HTTP application is started.
+Start the HTTP application:
 ```
 docker-compose up -d web
 ```
@@ -63,12 +63,12 @@ OBS: 1) The REST verification test are using the following service: http://echo.
 docker-compose run 'parameter'
 ```
 
-Shut down the whole test environment.
+Shut down the test environment.
 ```
 docker-compose down
 ```
 
-Remove the whole test environment/cleanup.
+Remove the test environment/cleanup.
 ```
 docker-machine rm -f testing
 ```
