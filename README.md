@@ -58,11 +58,14 @@ docker-compose up -d web
 ```
 
 Test execution:
-i) XML verification: xml-validation ii) REST verification: rest-validation.
+i) XML verification: xml-validation ii) REST verification: rest-validation
+
 A separate environment for dev/testing activities: validate-env
-OBS:
-1) The REST verification test is using the following service: http://echo.jsontest.com.
-2) Should improve testing and recognize failing situations better.
+
+Notice:
+
+1) The REST verification test is using the following service: http://echo.jsontest.com
+2) Recognizing failing situations haven't been implemented properly.
 ```
 docker-compose run 'parameter'
 ```
