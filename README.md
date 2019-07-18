@@ -14,30 +14,30 @@ $ docker-machine version
 docker-machine version 0.16.1, build cce350d
 
 $ docker-compose version
-docker-compose version 1.23.2, build unknown
-docker-py version: 3.6.0
-CPython version: 3.7.2
-OpenSSL version: OpenSSL 1.0.2q  20 Nov 2018
+docker-compose version 1.24.1, build unknown
+docker-py version: 3.7.3
+CPython version: 3.7.4
+OpenSSL version: OpenSSL 1.0.2s  28 May 2019
 
 $ docker version
 Client: Docker Engine - Community
- Version:           18.09.1
+ Version:           18.09.7
  API version:       1.39
- Go version:        go1.11.4
- Git commit:        4c52b90
- Built:             Thu Jan 10 03:21:29 2019
+ Go version:        go1.12.6
+ Git commit:        2d0083d
+ Built:             Thu Jun 27 22:52:31 2019
  OS/Arch:           darwin/amd64
  Experimental:      false
 
 Server: Docker Engine - Community
  Engine:
-  Version:          18.09.1
+  Version:          18.09.2
   API version:      1.39 (minimum version 1.12)
   Go version:       go1.10.6
-  Git commit:       4c52b90
-  Built:            Wed Jan  9 19:41:49 2019
+  Git commit:       6247962
+  Built:            Sun Feb 10 04:13:06 2019
   OS/Arch:          linux/amd64
-  Experimental:     true
+  Experimental:     false
 ```
 
 ## Commands to get the environment working:
@@ -57,8 +57,12 @@ Start the HTTP application:
 docker-compose up -d web
 ```
 
-Test execution: Parameter for XML verification: xml-validation, for REST verification: rest-validation. A separate environment for dev/testing activities: validate-env
-OBS: 1) The REST verification test are using the following service: http://echo.jsontest.com . 2) Should improve testing and recognize failing situations better.
+Test execution:
+i) XML verification: xml-validation ii) REST verification: rest-validation.
+A separate environment for dev/testing activities: validate-env
+OBS:
+1) The REST verification test is using the following service: http://echo.jsontest.com.
+2) Should improve testing and recognize failing situations better.
 ```
 docker-compose run 'parameter'
 ```
