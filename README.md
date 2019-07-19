@@ -5,8 +5,8 @@ It is created fairly easily using [docker-compose](https://docs.docker.com/compo
 
 Used test framework: [Robot Framework](https://github.com/robotframework/robotframework)
 1) Dependency test libraries/modules are installed during the setup and execution phase.
-2) Currently included testing activities: XML and REST reply verifications.
-3) Does not use SeleniumLibrary or browsers.
+2) Currently included testing: XML and REST reply verifications.
+3) Does not utilize SeleniumLibrary or browsers.
 
 ## Versions used in development/testing:
 ```
@@ -40,9 +40,9 @@ Server: Docker Engine - Community
   Experimental:     false
 ```
 
-## Commands to get the environment working:
+## Commands to get the environment up and working:
 
-Create a new environment using Virtualbox and name it 'testing':
+Create a new test environment utilizing Virtualbox and name it as 'testing':
 ```
 docker-machine create -d virtualbox testing
 ```
@@ -52,30 +52,33 @@ Take the created environment into use:
 eval $(docker-machine env testing)
 ```
 
-Start the HTTP application:
+Start the separate HTTP application:
 ```
 docker-compose up -d web
 ```
 
-Test execution:
-i) XML verification: xml-validation ii) REST verification: rest-validation
+## Test execution:
 
-A separate environment for dev/testing activities: validate-env
+```
+docker-compose run 'parameter'
+```
+
+1) XML verification: xml-validation
+2) REST verification: rest-validation
+3) separate environment for other dev/testing activities: validate-env
 
 Notice:
 
 1) The REST verification test is using the following service: http://echo.jsontest.com
 2) Recognizing failing situations haven't been implemented properly.
-```
-docker-compose run 'parameter'
-```
 
-Shut down the test environment.
+## Shut down the test environment:
+
 ```
 docker-compose down
 ```
+## Remove the test environment/cleanup:
 
-Remove the test environment/cleanup.
 ```
 docker-machine rm -f testing
 ```
