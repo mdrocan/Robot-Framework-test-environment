@@ -47,6 +47,13 @@ Create a new test environment utilizing Virtualbox and name it as 'testing':
 docker-machine create -d virtualbox testing
 ```
 
+It's recommeded to use boot2docker version 18.09.8 with Mac as the latest version 19.03.0 has a challenge that prevents executing test properly with this setup. (https://github.com/boot2docker/boot2docker/issues/1395).
+
+Working command:
+```
+docker-machine create -d virtualbox --virtualbox-boot2docker-url https://github.com/boot2docker/boot2docker/releases/download/v18.09.8/boot2docker.iso testing
+```
+
 Take the created environment into use:
 ```
 eval $(docker-machine env testing)
