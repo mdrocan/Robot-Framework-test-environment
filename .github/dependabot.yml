@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "robot_xml"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "docker"
+    directory: "robot_rest"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    
+  - package-ecosystem: "docker"
+    directory: "app_service"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    
+  - package-ecosystem: "docker"
+    directory: "test_env"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
