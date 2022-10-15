@@ -73,7 +73,7 @@ docker-compose run 'parameter'
 
 Notice:
 
-1) The REST verification test is using the following service: http://echo.jsontest.com
+1) The REST verification test is using the following service: <http://echo.jsontest.com>
 2) Recognizing failing situations haven't been implemented properly.
 
 ## Shut down the test environment
