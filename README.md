@@ -1,3 +1,10 @@
+---
+# About
+
+Linter verified software
+
+[![GitHub Super-Linter](https://github.com/mdrocan/Robot-Framework-test-environment/workflows/CI-check/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 # Dockerized test environment for XML and REST validation
 
 The test environment is based on Alpine and Nginx images in Docker containers.
