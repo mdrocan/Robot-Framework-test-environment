@@ -1,15 +1,19 @@
 # Dockerized test environment for XML and REST validation
 
 The test environment is based on Alpine and Nginx images in Docker containers.
-It is created fairly easily using [docker-compose](https://docs.docker.com/compose/).
+It is created fairly easily using \
+[docker-compose](https://docs.docker.com/compose/).
 
-Used test framework: [Robot Framework](https://github.com/robotframework/robotframework)
-1) Dependency test libraries/modules are installed during the setup and execution phase.
+Test automation framework: \
+[Robot Framework](https://github.com/robotframework/robotframework)
+1) Dependency test libraries/modules are installed during the setup and \
+execution phase.
 2) Currently included testing: XML and REST reply verifications.
 3) Does not utilize SeleniumLibrary or browsers.
 
-## Versions used in development/testing:
-```
+## Versions used in development/testing
+
+```sh
 $ docker-machine version
 docker-machine version 0.16.1, build cce350d
 
@@ -40,26 +44,26 @@ Server: Docker Engine - Community
   Experimental:     false
 ```
 
-## Commands to get the environment up and working:
+## Commands to get the environment up and working
 
 Create a new test environment utilizing Virtualbox and name it as 'testing':
-```
+```sh
 docker-machine create -d virtualbox testing
 ```
 
 Take the created environment into use:
-```
+```sh
 eval $(docker-machine env testing)
 ```
 
 Start the separate HTTP application:
-```
+```sh
 docker-compose up -d web
 ```
 
-## Test execution:
+## Test execution
 
-```
+```sh
 docker-compose run 'parameter'
 ```
 
@@ -72,13 +76,13 @@ Notice:
 1) The REST verification test is using the following service: http://echo.jsontest.com
 2) Recognizing failing situations haven't been implemented properly.
 
-## Shut down the test environment:
+## Shut down the test environment
 
-```
+```sh
 docker-compose down
 ```
-## Remove the test environment/cleanup:
+## Remove the test environment/cleanup
 
-```
+```sh
 docker-machine rm -f testing
 ```
