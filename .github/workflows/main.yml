@@ -4,7 +4,7 @@ name: CI-check
 on:
   push:
     branches-ignore:
-    - master
+      - master
 
   workflow_dispatch:
 
